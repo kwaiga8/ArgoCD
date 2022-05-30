@@ -1,2 +1,2 @@
 # ArgoCD
-CD with Argo !
+kubernetess pods on CD with Argo !
