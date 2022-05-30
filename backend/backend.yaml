@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: backend-deployment
+  name: backend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend-deployment
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: backend-deployment
+    spec:
+      containers:
+      - image: 192.168.44.44:8082/docker_registry/backend:latest
+        ports:
+          - containerPort: 5001
+        name: backend
+        resources: {}
+      imagePullSecrets:
+        - name: regcred
+status: {}
